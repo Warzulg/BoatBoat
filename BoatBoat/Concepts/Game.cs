@@ -69,10 +69,6 @@ namespace BoatBoat.Concepts {
             Console.WriteLine("============================");
         }
 
-        //public void OnTick(int tick, Action action) {
-        //    action();
-        //}
-
         public void Tick() {
             ++CurrentTick;
             foreach (var entry in Entities) {
