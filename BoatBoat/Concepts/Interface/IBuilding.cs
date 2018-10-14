@@ -10,6 +10,7 @@ namespace BoatBoat.Concepts.Interface {
     public interface IBuilding : IGameEntity {
         List<Worker> Workers { get; }
         int StaminaStrain { get; }
+        bool IsActive { get; }
 
         bool AddWorker(Worker worker);
         bool RemoveWorker(Worker worker);

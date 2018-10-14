@@ -42,7 +42,7 @@ namespace BoatBoat.Concepts.Building {
         }
 
         public bool AddWorker(Worker worker) {
-            if (Workers.Count < Workers.Capacity) {
+            if (!IsFull()) {
                 var success = worker.AddToBuilding(this);
                 if (success) {
                     Workers.Add(worker);
@@ -50,6 +50,22 @@ namespace BoatBoat.Concepts.Building {
                 }
             }
             return false;
+        }
+
+        public List<Worker> AddWorkers(List<Worker> workers) {
+            if (workers.Count == 0)
+                return workers;
+            var workersSkipped = new List<Worker>(workers);
+            while (!IsFull()) {
+                var worker = workersSkipped.First();
+                workersSkipped.Remove(worker);
+                AddWorker(worker);
+            }
+            return workersSkipped;
+        }
+
+        public bool IsFull() {
+            return Workers.Count < Workers.Capacity;
         }
 
         public bool RemoveWorker() {
