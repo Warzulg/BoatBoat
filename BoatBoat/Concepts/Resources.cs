@@ -10,6 +10,16 @@ using BoatBoat.Concepts.Building;
 using BoatBoat.Concepts.System;
 
 namespace BoatBoat.Concepts {
+    public class ResourceAmount {
+        public int Wheat;
+        public int Lumber;
+
+        public ResourceAmount(int wheat = 0, int lumber = 0) {
+            Wheat = wheat;
+            Lumber = lumber;
+        }
+    }
+
     public class Resources {
         private const int _DefaultStartingWheat = 1000;
         private const int _DefaultStartingLumber = 1000;

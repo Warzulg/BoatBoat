@@ -8,16 +8,6 @@ using BoatBoat.Concepts.Interface;
 using BoatBoat.Concepts.People;
 
 namespace BoatBoat.Concepts.Building {
-    public class ResourceAmount {
-        public int Wheat;
-        public int Lumber;
-
-        public ResourceAmount(int wheat = 0, int lumber = 0) {
-            Wheat = wheat;
-            Lumber = lumber;
-        }
-    }
-
     public abstract class Building : IBuilding {
         private static Resources Resources;
 
